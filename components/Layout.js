@@ -7,12 +7,12 @@ const Layout = ({ children }) => {
 	return (
 		<div className='flex flex-col min-h-screen justify-between'>
 			<Head>
-				<title>Interactive E-Learning Library - Phúc "Scott" Nguyễn</title>
+				<title>
+					Interactive E-Learning Library - Phúc "Scott" Nguyễn
+				</title>
 			</Head>
 			<Header />
-			<div>
 				{children}
-			</div>
 			<Footer />
 		</div>
 	)
