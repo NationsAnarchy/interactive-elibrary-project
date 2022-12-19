@@ -10,7 +10,8 @@ const Books = () => {
 
 	const handleSubmit = (query) => {
 		const filteredBookList = books.filter((book) => book.title.toLowerCase().includes(query) ||
-			book.genre.toLowerCase().includes(query) || book.author.toLowerCase().includes(query))
+			book.genre.toLowerCase().includes(query) || book.author.toLowerCase().includes(query) ||
+			book.places.toLowerCase().includes(query) || book.date.toString().includes(query))
 		setBookList(filteredBookList)
 	}
 
@@ -21,6 +22,7 @@ const Books = () => {
 			</h1>
 			<SearchBooks onSubmit={handleSubmit} />
 			<div className='flex flex-col justify-center gap-3'>
+				{bookList.length === 0 && <span className='font-bold uppercase'>Houston, we have a problem!</span>}
 				{bookList.map((book) => (
 					<Link href={'/book/' + book.id} key={book.id}>
 						<Book book={book} />
