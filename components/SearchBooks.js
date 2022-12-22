@@ -4,8 +4,6 @@ const SearchBooks = ({ onSubmit }) => {
 
 	const [query, setQuery] = useState('')
 
-	console.log(query)
-
 	const handleFormSubmit = (e) => {
 		e.preventDefault()
 		onSubmit(query)
